@@ -34,7 +34,7 @@ TARGET=librgbmatrix
 #   regular-pi1        # If you have an old Pi1 and regular didn't work.
 #   classic            # (deprecated) Classic Pi1/2/. Not used anymore.
 #   classic-pi1        # (deprecated) Classic pinout on Rasperry Pi 1
-HARDWARE_DESC?=regular
+HARDWARE_DESC?=adafruit-hat-pwm
 
 # If you see that your display is inverse, you might have a matrix variant
 # has uses inverse logic for the RGB bits. In that case: uncomment this.
@@ -66,7 +66,7 @@ HARDWARE_DESC?=regular
 # typically should double check cables and add TTL level converter if you
 # haven't.
 # Flag: --led-slowdown-gpio
-#DEFINES+=-DRGB_SLOWDOWN_GPIO=1
+DEFINES+=-DRGB_SLOWDOWN_GPIO=3
 
 # This allows to change the base time-unit for the on-time in the lowest
 # significant bit in nanoseconds.
@@ -127,7 +127,7 @@ HARDWARE_DESC?=regular
 # between refresh rate (which is reduce the higher this value is) and
 # flicker suppression (which is better with higher values).
 # Flag: --led-limit-refresh
-#DEFINES+=-DFIXED_FRAME_MICROSECONDS=5000
+DEFINES+=-DFIXED_FRAME_MICROSECONDS=5000
 
 # Enable wide 64 bit GPIO offered with the compute module.
 # This will use more memory to internally represent the frame buffer, so
@@ -148,7 +148,7 @@ HARDWARE_DESC?=regular
 # close together.
 # Then you can set the flag --led-gpio-mapping=adafruit-hat-pwm
 # .. or uncomment the following line.
-#HARDWARE_DESC=adafruit-hat-pwm
+HARDWARE_DESC=adafruit-hat-pwm
 
 # Typically, a Hub75 panel is split in two half displays, so that a 1:16
 # multiplexing actually multiplexes over two half displays and gives 32 lines.
